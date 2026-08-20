@@ -32,9 +32,11 @@ const secondaryLogo = document.getElementById('brand-logo-secondary');
 const brandName = document.getElementById('pass-brand-name');
 const toast = document.getElementById('toast');
 let toastTimer;
+let currentTheme = 'saints';
 
 function setTheme(themeKey, persist = true) {
   const theme = themes[themeKey] || themes.saints;
+  currentTheme = themeKey in themes ? themeKey : 'saints';
   pass.classList.remove('theme-saints', 'theme-pelicans', 'theme-benson');
   pass.classList.add(theme.className);
 
@@ -53,12 +55,12 @@ function setTheme(themeKey, persist = true) {
   }
 
   tabs.forEach(tab => {
-    const active = tab.dataset.theme === themeKey;
+    const active = tab.dataset.theme === currentTheme;
     tab.classList.toggle('active', active);
     tab.setAttribute('aria-selected', active ? 'true' : 'false');
   });
 
-  if (persist) localStorage.setItem('coreValuesTheme', themeKey);
+  if (persist) localStorage.setItem('coreValuesTheme', currentTheme);
 }
 
 function showToast(message) {
@@ -72,10 +74,20 @@ tabs.forEach(tab => tab.addEventListener('click', () => setTheme(tab.dataset.the
 
 document.querySelectorAll('.wallet-button').forEach(button => {
   button.addEventListener('click', () => {
-    const wallet = button.dataset.wallet === 'apple' ? 'Apple Wallet' : 'Google Wallet';
-    showToast(`${wallet} connection is the next step.`);
+    if (button.dataset.wallet === 'google') {
+      const link = window.GOOGLE_WALLET_LINKS?.[currentTheme];
+      if (link) {
+        window.location.href = link;
+      } else {
+        showToast('Google Wallet is ready for issuer setup.');
+      }
+      return;
+    }
+
+    showToast('Apple Wallet connection is the next step.');
   });
 });
 
 const stored = localStorage.getItem('coreValuesTheme');
 if (stored && themes[stored]) setTheme(stored, false);
+else setTheme('saints', false);
