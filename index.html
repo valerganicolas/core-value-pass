@@ -18,15 +18,27 @@
     <section class="content-width chooser-section" aria-labelledby="choose-heading">
       <p class="section-label" id="choose-heading">Choose your organization</p>
       <div class="theme-tabs" role="tablist" aria-label="Organization theme">
-        <button class="theme-tab active" type="button" role="tab" aria-selected="true" data-theme="saints">Saints · Black + Gold</button>
-        <button class="theme-tab" type="button" role="tab" aria-selected="false" data-theme="pelicans">Pelicans · Navy + Red + Gold</button>
-        <button class="theme-tab" type="button" role="tab" aria-selected="false" data-theme="benson">Benson Enterprises · Blue + Gold</button>
+        <button class="theme-tab active" type="button" role="tab" aria-selected="true" data-theme="saints">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span class="theme-copy"><strong>Saints</strong><small>Black + gold</small></span>
+        </button>
+        <button class="theme-tab" type="button" role="tab" aria-selected="false" data-theme="pelicans">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span class="theme-copy"><strong>Pelicans</strong><small>Navy + red + gold</small></span>
+        </button>
+        <button class="theme-tab" type="button" role="tab" aria-selected="false" data-theme="benson">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span class="theme-copy"><strong>Benson Enterprises</strong><small>Executive blue + gold</small></span>
+        </button>
       </div>
     </section>
 
     <section class="content-width experience-grid">
       <div class="pass-column">
         <article id="values-pass" class="values-pass theme-saints" aria-live="polite">
+          <span class="pass-orb orb-one" aria-hidden="true"></span>
+          <span class="pass-orb orb-two" aria-hidden="true"></span>
+
           <header class="pass-header">
             <div class="brand-lockup" id="brand-lockup">
               <img id="brand-logo-primary" src="https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/SAINTS_WEB.png" alt="Saints logo" />
@@ -36,7 +48,7 @@
 
           <div class="pass-main">
             <p class="pass-kicker">Our Core Values</p>
-            <h2>How we show up<br />every day.</h2>
+            <h2>How we show<br />up every day.</h2>
             <ul class="value-list" aria-label="Core values">
               <li>People First</li>
               <li>Excellence</li>
@@ -54,50 +66,50 @@
         </article>
       </div>
 
-      <div class="details-column">
-        <section class="preview-copy">
-          <p class="section-label">Pass Preview</p>
-          <h2>Keep the values close.</h2>
-          <p>Carry our values with you.</p>
+      <section class="preview-copy">
+        <p class="section-label">Pass Preview</p>
+        <h2>Keep the values close.</h2>
+        <p>This prototype is ready for mobile. Next, the two buttons below will connect this same design to Apple Wallet and Google Wallet.</p>
 
-          <div class="wallet-actions">
-            <button class="wallet-button apple" type="button" data-wallet="apple">Add to Apple Wallet</button>
-            <button class="wallet-button google" type="button" data-wallet="google">Add to Google Wallet</button>
-          </div>
-          <p class="prototype-note">Prototype only: the Wallet buttons are intentionally inactive until we connect the issuing/signing step.</p>
-        </section>
+        <div class="wallet-actions">
+          <button class="wallet-button apple" type="button" data-wallet="apple">Add to Apple Wallet</button>
+          <button class="wallet-button google" type="button" data-wallet="google">Add to Google Wallet</button>
+        </div>
+        <p class="prototype-note">Prototype only: the Wallet buttons are intentionally inactive until we connect the issuing/signing step.</p>
+      </section>
+    </section>
 
-        <section class="story-section">
-          <p class="section-label">The Full Story</p>
-          <h2>What each value means</h2>
+    <section class="content-width story-section">
+      <div class="story-heading">
+        <p class="section-label">The Full Story</p>
+        <h2>What each value means</h2>
+      </div>
 
-          <div class="accordion" id="values-accordion">
-            <details open>
-              <summary>People First</summary>
-              <div class="accordion-copy">Our players and Team Members are integral to our success, and their ideas and opinions matter. We are committed to growing our staff professionally and stand beside them through success and hardship—just as they stand with us. Together, we win!</div>
-            </details>
-            <details>
-              <summary>Excellence</summary>
-              <div class="accordion-copy">We work tirelessly to be #1 in everything we do, and we are positioned to set the pace for everyone else through consistent strong performance in and out of the game, by listening and learning, and by being innovative and making continual improvements.</div>
-            </details>
-            <details>
-              <summary>Celebrate Individuality</summary>
-              <div class="accordion-copy">We respect and value all identities, experiences, and perspectives of our players and team members. Our appreciation of individuality makes us stronger, it informs our inclusive policies and practices, and our businesses, fans, and communities benefit from the unique contributions of our diverse teams.</div>
-            </details>
-            <details>
-              <summary>Community</summary>
-              <div class="accordion-copy">We take pride in the growth and success of the entire Gulf South region and are committed to leveraging our resources and goodwill to foster meaningful change for the greater good of society.</div>
-            </details>
-            <details>
-              <summary>Teamwork</summary>
-              <div class="accordion-copy">Just like being in the game, we achieve more when we collaborate and share knowledge rather than operate in a silo.</div>
-            </details>
-            <details>
-              <summary>Integrity</summary>
-              <div class="accordion-copy">We act with our fans’ and Organization’s best interests in mind. We take pride in our jobs, our role as brand ambassadors, and in doing the right thing.</div>
-            </details>
-          </div>
-        </section>
+      <div class="accordion" id="values-accordion">
+        <details open>
+          <summary>People First</summary>
+          <div class="accordion-copy">Our players and Team Members are integral to our success, and their ideas and opinions matter. We are committed to growing our staff professionally and stand beside them through success and hardship—just as they stand with us. Together, we win!</div>
+        </details>
+        <details>
+          <summary>Excellence</summary>
+          <div class="accordion-copy">We work tirelessly to be #1 in everything we do, and we are positioned to set the pace for everyone else through consistent strong performance in and out of the game, by listening and learning, and by being innovative and making continual improvements.</div>
+        </details>
+        <details>
+          <summary>Celebrate Individuality</summary>
+          <div class="accordion-copy">We respect and value all identities, experiences, and perspectives of our players and team members. Our appreciation of individuality makes us stronger, it informs our inclusive policies and practices, and our businesses, fans, and communities benefit from the unique contributions of our diverse teams.</div>
+        </details>
+        <details>
+          <summary>Community</summary>
+          <div class="accordion-copy">We take pride in the growth and success of the entire Gulf South region and are committed to leveraging our resources and goodwill to foster meaningful change for the greater good of society.</div>
+        </details>
+        <details>
+          <summary>Teamwork</summary>
+          <div class="accordion-copy">Just like being in the game, we achieve more when we collaborate and share knowledge rather than operate in a silo.</div>
+        </details>
+        <details>
+          <summary>Integrity</summary>
+          <div class="accordion-copy">We act with our fans’ and Organization’s best interests in mind. We take pride in our jobs, our role as brand ambassadors, and in doing the right thing.</div>
+        </details>
       </div>
     </section>
   </main>
