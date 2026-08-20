@@ -8,7 +8,7 @@ const themes = {
     secondaryAlt: ''
   },
   pelicans: {
-    label: 'Pelicans',
+    label: 'Pelicans /Squadron',
     className: 'theme-pelicans',
     primary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/PELS_WEB.png',
     primaryAlt: 'New Orleans Pelicans logo',
@@ -18,10 +18,10 @@ const themes = {
   city: {
     label: 'City Edition',
     className: 'theme-city',
-    primary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/PELS_WEB.png',
-    primaryAlt: 'New Orleans Pelicans logo',
-    secondary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/SQUADRON_WEB.png',
-    secondaryAlt: 'Birmingham Squadron logo'
+    primary: 'assets/city-edition-logo.svg',
+    primaryAlt: 'Pelicans City Edition logo',
+    secondary: null,
+    secondaryAlt: ''
   },
   benson: {
     label: 'Benson Enterprises',
