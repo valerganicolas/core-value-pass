@@ -62,7 +62,7 @@ button { font: inherit; }
 .chooser-section { margin-top: 34px; }
 .theme-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 12px;
 }
@@ -86,6 +86,10 @@ button { font: inherit; }
   border-color: #c9ad73;
   box-shadow: 0 0 0 3px rgba(211,188,141,.18);
 }
+.theme-tab.active[data-theme="city"] {
+  border-color: #38D230;
+  box-shadow: 0 0 0 3px rgba(56,210,48,.18), 0 0 24px rgba(102,0,223,.10);
+}
 .theme-copy { display: grid; gap: 4px; }
 .theme-copy strong { font-size: 14px; line-height: 1.15; }
 .theme-copy small { font-size: 12px; color: var(--muted); }
@@ -99,6 +103,7 @@ button { font: inherit; }
 }
 .theme-tab[data-theme="saints"] .theme-swatch { background: linear-gradient(135deg, #101820 0 52%, #d3bc8d 52% 100%); }
 .theme-tab[data-theme="pelicans"] .theme-swatch { background: linear-gradient(135deg, #0c2340 0 46%, #c8102e 46% 74%, #85714d 74% 100%); }
+.theme-tab[data-theme="city"] .theme-swatch { background: linear-gradient(135deg, #000 0 42%, #38D230 42% 70%, #6600DF 70% 100%); }
 .theme-tab[data-theme="benson"] .theme-swatch { background: linear-gradient(135deg, #15334d 0 62%, #c6a15b 62% 100%); }
 
 .experience-grid {
@@ -112,6 +117,7 @@ button { font: inherit; }
 .values-pass {
   --pass-bg: #101820;
   --pass-accent: #d3bc8d;
+  --pass-accent-2: #d3bc8d;
   --pass-text: #ffffff;
   position: relative;
   width: min(100%, 430px);
@@ -124,15 +130,25 @@ button { font: inherit; }
   flex-direction: column;
   color: var(--pass-text);
   background:
-    radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--pass-accent) 30%, transparent), transparent 34%),
+    radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--pass-accent-2) 30%, transparent), transparent 34%),
     linear-gradient(155deg, color-mix(in srgb, var(--pass-bg) 96%, #000) 0%, var(--pass-bg) 62%, color-mix(in srgb, var(--pass-bg) 78%, #000) 100%);
   box-shadow: var(--soft-shadow);
   isolation: isolate;
   transition: background .25s ease, transform .25s ease;
 }
-.values-pass.theme-saints { --pass-bg: #101820; --pass-accent: #d3bc8d; }
-.values-pass.theme-pelicans { --pass-bg: #0c2340; --pass-accent: #c8102e; }
-.values-pass.theme-benson { --pass-bg: #15334d; --pass-accent: #c6a15b; }
+.values-pass.theme-saints { --pass-bg: #101820; --pass-accent: #d3bc8d; --pass-accent-2: #d3bc8d; }
+.values-pass.theme-pelicans { --pass-bg: #0c2340; --pass-accent: #c8102e; --pass-accent-2: #85714d; }
+.values-pass.theme-city {
+  --pass-bg: #000000;
+  --pass-accent: #38D230;
+  --pass-accent-2: #6600DF;
+  background:
+    radial-gradient(circle at 84% 4%, rgba(102,0,223,.42), transparent 34%),
+    radial-gradient(circle at 16% 92%, rgba(56,210,48,.14), transparent 30%),
+    linear-gradient(155deg, #050505 0%, #000 64%, #09030f 100%);
+  box-shadow: 0 24px 70px rgba(0,0,0,.28), 0 0 34px rgba(102,0,223,.16);
+}
+.values-pass.theme-benson { --pass-bg: #15334d; --pass-accent: #c6a15b; --pass-accent-2: #c6a15b; }
 
 .pass-orb { position: absolute; pointer-events: none; z-index: -1; }
 .orb-one {
@@ -141,7 +157,7 @@ button { font: inherit; }
   top: 90px;
   right: -90px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--pass-accent) 12%, transparent);
+  background: color-mix(in srgb, var(--pass-accent-2) 12%, transparent);
 }
 .orb-two {
   width: 230px;
@@ -152,6 +168,8 @@ button { font: inherit; }
   border-radius: 48% 52% 42% 58%;
   transform: rotate(23deg);
 }
+.values-pass.theme-city .orb-one { background: rgba(102,0,223,.28); filter: blur(2px); }
+.values-pass.theme-city .orb-two { border-color: rgba(56,210,48,.62); box-shadow: 0 0 28px rgba(56,210,48,.10); }
 
 .pass-header {
   min-height: 108px;
@@ -179,6 +197,7 @@ button { font: inherit; }
 
 .pass-main { margin-top: 22px; position: relative; z-index: 1; }
 .pass-kicker { color: color-mix(in srgb, var(--pass-text) 65%, transparent); font-size: 11px; font-weight: 850; }
+.values-pass.theme-city .pass-kicker { color: #38D230; }
 .pass-main h2 {
   margin: 11px 0 26px;
   max-width: 330px;
@@ -214,6 +233,7 @@ button { font: inherit; }
   background: var(--pass-accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--pass-accent) 12%, transparent);
 }
+.values-pass.theme-city .value-list li:nth-child(even)::before { background: #6600DF; box-shadow: 0 0 0 4px rgba(102,0,223,.14); }
 .pass-footer {
   margin-top: auto;
   padding-top: 18px;
@@ -230,6 +250,7 @@ button { font: inherit; }
   position: relative;
   z-index: 1;
 }
+.values-pass.theme-city .pass-footer { border-top-color: rgba(56,210,48,.26); }
 
 .preview-copy { min-width: 0; }
 .preview-copy h2, .story-section h2 {
@@ -351,6 +372,10 @@ details[open] summary::after { content: "+"; transform: rotate(45deg); }
   text-align: center;
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 940px) {
+  .theme-tabs { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
 
 @media (max-width: 800px) {
   .page-shell {
