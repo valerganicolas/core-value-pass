@@ -1,0 +1,26 @@
+{
+  "issuerId": "3388000000023187298",
+  "issuerName": "New Orleans Pelicans/ Saints",
+  "passes": {
+    "saints": {
+      "classSuffix": "core_values_saints",
+      "objectSuffix": "core_values_saints_shared",
+      "title": "Saints Core Values"
+    },
+    "pelicans": {
+      "classSuffix": "core_values_pelicans_squadron",
+      "objectSuffix": "core_values_pelicans_squadron_shared",
+      "title": "Pelicans /Squadron Core Values"
+    },
+    "city": {
+      "classSuffix": "core_values_city_edition",
+      "objectSuffix": "core_values_city_edition_shared",
+      "title": "City Edition Core Values"
+    },
+    "benson": {
+      "classSuffix": "core_values_benson",
+      "objectSuffix": "core_values_benson_shared",
+      "title": "Benson Enterprises Core Values"
+    }
+  }
+}
