@@ -233,7 +233,7 @@ button { font: inherit; }
   background: var(--pass-accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--pass-accent) 12%, transparent);
 }
-.values-pass.theme-city .value-list li:nth-child(even)::before { background: #6600DF; box-shadow: 0 0 0 4px rgba(102,0,223,.14); }
+.values-pass.theme-city .value-list li::before { background: #38D230; box-shadow: 0 0 0 4px rgba(56,210,48,.14); }
 .pass-footer {
   margin-top: auto;
   padding-top: 18px;
