@@ -3,5 +3,6 @@
 window.GOOGLE_WALLET_LINKS = {
   saints: "",
   pelicans: "",
+  city: "",
   benson: ""
 };
