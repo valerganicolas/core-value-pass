@@ -282,8 +282,8 @@ button { font: inherit; }
 .story-section h2 { font-size: 28px; }
 .accordion {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 12px;
+  grid-template-columns: 1fr;
+  gap: 8px;
 }
 details {
   background: rgba(255,255,255,.78);
