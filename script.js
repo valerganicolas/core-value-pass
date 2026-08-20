@@ -18,7 +18,7 @@ const themes = {
   city: {
     label: 'City Edition',
     className: 'theme-city',
-    primary: 'assets/city-edition-logo.svg',
+    primary: 'assets/city-edition-logo.png',
     primaryAlt: 'Pelicans City Edition logo',
     secondary: null,
     secondaryAlt: ''
