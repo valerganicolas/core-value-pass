@@ -15,6 +15,14 @@ const themes = {
     secondary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/SQUADRON_WEB.png',
     secondaryAlt: 'Birmingham Squadron logo'
   },
+  city: {
+    label: 'City Edition',
+    className: 'theme-city',
+    primary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/PELS_WEB.png',
+    primaryAlt: 'New Orleans Pelicans logo',
+    secondary: 'https://lightgreen-whale-804521.hostingersite.com/wp-content/uploads/2026/08/SQUADRON_WEB.png',
+    secondaryAlt: 'Birmingham Squadron logo'
+  },
   benson: {
     label: 'Benson Enterprises',
     className: 'theme-benson',
@@ -37,7 +45,7 @@ let currentTheme = 'saints';
 function setTheme(themeKey, persist = true) {
   const theme = themes[themeKey] || themes.saints;
   currentTheme = themeKey in themes ? themeKey : 'saints';
-  pass.classList.remove('theme-saints', 'theme-pelicans', 'theme-benson');
+  pass.classList.remove('theme-saints', 'theme-pelicans', 'theme-city', 'theme-benson');
   pass.classList.add(theme.className);
 
   primaryLogo.src = theme.primary;
