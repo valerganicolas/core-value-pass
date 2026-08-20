@@ -1,0 +1,44 @@
+name: Build Google Wallet passes
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'google-wallet/**'
+      - '.github/workflows/google-wallet.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-wallet-passes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Create or update Google Wallet passes
+        env:
+          GOOGLE_WALLET_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_WALLET_SERVICE_ACCOUNT_JSON }}
+        run: node google-wallet/setup.mjs
+
+      - name: Publish safe Google Wallet links
+        run: |
+          if git diff --quiet -- wallet-links.js; then
+            echo "Google Wallet links are already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wallet-links.js
+          git commit -m "Update Google Wallet save links"
+          git push
