@@ -18,12 +18,49 @@
         max-width: 175px;
         height: 64px;
       }
+
+      .mission-section {
+        margin-top: 42px;
+      }
+
+      .mission-card {
+        padding: 30px 24px 32px;
+        border-radius: 26px;
+        background: #ffffff;
+        border: 1px solid rgba(16, 24, 32, 0.09);
+        box-shadow: 0 18px 44px rgba(16, 24, 32, 0.08);
+      }
+
+      .mission-card .section-label {
+        font-size: 11px;
+        letter-spacing: .22em;
+        color: #667085;
+      }
+
+      .mission-copy {
+        margin-top: 18px;
+        max-width: none;
+        font-size: clamp(28px, 8vw, 36px);
+        line-height: 1.08;
+        letter-spacing: -.045em;
+        font-weight: 900;
+      }
     }
     @media (max-width: 470px) {
       .values-pass.theme-city .brand-lockup img {
         width: min(100%, 165px);
         max-width: 165px;
         height: 60px;
+      }
+
+      .mission-card {
+        padding: 28px 21px 30px;
+        border-radius: 24px;
+      }
+
+      .mission-copy {
+        font-size: clamp(27px, 8.4vw, 34px);
+        line-height: 1.09;
       }
     }
   </style>
