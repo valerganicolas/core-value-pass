@@ -301,8 +301,28 @@ button { font: inherit; }
   line-height: 1.55;
 }
 
-.story-section {
+.mission-section {
   margin-top: 52px;
+}
+.mission-card {
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 12px 34px rgba(16,24,32,.06);
+}
+.mission-copy {
+  margin: 12px 0 0;
+  max-width: 900px;
+  color: var(--ink);
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.28;
+  letter-spacing: -.025em;
+  font-weight: 780;
+}
+
+.story-section {
+  margin-top: 28px;
   padding-top: 34px;
   border-top: 1px solid var(--line);
 }
@@ -396,7 +416,8 @@ details[open] summary::after { content: "+"; transform: rotate(45deg); }
   .experience-grid { grid-template-columns: 1fr; margin-top: 30px; }
   .values-pass { min-height: 560px; border-radius: 28px; padding: 26px; }
   .preview-copy { max-width: 560px; width: 100%; margin-inline: auto; }
-  .story-section { margin-top: 42px; }
+  .mission-section { margin-top: 42px; }
+  .story-section { margin-top: 24px; }
   .accordion { grid-template-columns: 1fr; }
   .values-pass.theme-city .brand-lockup img { width: min(100%, 230px); max-width: 230px; height: 84px; }
 }
@@ -406,6 +427,8 @@ details[open] summary::after { content: "+"; transform: rotate(45deg); }
   .values-pass { min-height: 535px; }
   .brand-lockup { margin-bottom: 8px; }
   .intro h1 { font-size: 48px; }
+  .mission-card { padding: 22px 18px; }
+  .mission-copy { font-size: 21px; }
   .values-pass.theme-city .brand-lockup img { width: min(100%, 210px); max-width: 210px; height: 78px; }
 }
 
