@@ -33,6 +33,13 @@ const themes = {
   }
 };
 
+const appleWalletLinks = {
+  saints: 'https://www.thepassstudio.com/share/N0rKlZx07SshVvMFpU6KuQ',
+  pelicans: 'https://www.thepassstudio.com/share/4kmgVfv4REuwVWc6lDfQ7A',
+  city: 'https://www.thepassstudio.com/share/3eHrtQzBkFmMyyo3iG6N-g',
+  benson: ''
+};
+
 const tabs = [...document.querySelectorAll('.theme-tab')];
 const pass = document.getElementById('values-pass');
 const primaryLogo = document.getElementById('brand-logo-primary');
@@ -92,7 +99,14 @@ document.querySelectorAll('.wallet-button').forEach(button => {
       return;
     }
 
-    showToast('Apple Wallet connection is the next step.');
+    if (button.dataset.wallet === 'apple') {
+      const link = appleWalletLinks[currentTheme];
+      if (link) {
+        window.location.href = link;
+      } else {
+        showToast('Apple Wallet pass is not available for Benson Enterprises yet.');
+      }
+    }
   });
 });
 
